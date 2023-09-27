@@ -15,12 +15,12 @@
                     <span>Dashboard</span></a></li>
 
             <li class="nav-item dropdown active">
-                <a href="#" class="nav-link has-dropdown"><i class="fas fa-hand-point-right"></i><span>Dropdown
-                        Items</span></a>
+                <a href="#" class="nav-link has-dropdown"><i class="fas fa-hand-point-right"></i>
+                    <span>Page Settings</span></a>
                 <ul class="dropdown-menu">
-                    <li class="active"><a class="nav-link" href=""><i class="fas fa-angle-right"></i> Item 1</a>
+                    <li class="active"><a class="nav-link" href="{{ route('admin_home_page') }}"><i class="fas fa-angle-right"></i> Home</a>
                     </li>
-                    <li class=""><a class="nav-link" href=""><i class="fas fa-angle-right"></i> Item 2</a>
+                    <li class=""><a class="nav-link" href="{{ route('terms')}}"><i class="fas fa-angle-right"></i> Terms</a>
                     </li>
                 </ul>
             </li>

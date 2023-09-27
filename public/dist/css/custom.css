@@ -430,3 +430,13 @@ hr.invoice-above-table {
     object-fit: cover;
     margin-right: 4px;
 }
+
+.custom-tab .nav-pills .nav-link{
+    background: #d7e3f9;
+    margin-bottom: 5px;
+}
+
+.custom-tab .nav-pills .nav-link.active {
+    color: #fff!important;
+    background-color: #6777ef!important;
+}

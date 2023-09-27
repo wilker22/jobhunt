@@ -2,7 +2,7 @@
 
 
 @section('main_content')
-    <div class="slider" style="background-image: url(uploads/banner5.jpg)">
+    <div class="slider" style="background-image: url(uploads/home_banner.jpg)">
         <div class="bg"></div>
         <div class="container">
             <div class="row">
