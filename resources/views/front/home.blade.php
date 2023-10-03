@@ -2,18 +2,16 @@
 
 
 @section('main_content')
-    <div class="slider" style="background-image: url(uploads/home_banner.jpg)">
+    <div class="slider" style="background-image: url({{ asset('uploads/'.$home_page_data->background) }})">
         <div class="bg"></div>
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
                     <div class="item">
                         <div class="text">
-                            <h2>Find Your Desired Job</h2>
+                            <h2>{{$home_page_data->heading}}</h2>
                             <p>
-                                Search the best, perfect and suitable jobs
-                                that matches your skills in your expertise
-                                area.
+                                {{$home_page_data->text}}
                             </p>
                         </div>
                         <div class="search-section">
@@ -23,14 +21,14 @@
                                         <div class="col-lg-3">
                                             <div class="form-group">
                                                 <input type="text" name="" class="form-control"
-                                                    placeholder="Job Title" />
+                                                    placeholder="{{$home_page_data->job_title}}" />
                                             </div>
                                         </div>
                                         <div class="col-lg-3">
                                             <div class="form-group">
                                                 <select name="" class="form-select select2">
                                                     <option value="">
-                                                        Job Location
+                                                        {{$home_page_data->job_location}}
                                                     </option>
                                                     <option value="">
                                                         Australia
@@ -60,7 +58,7 @@
                                             <div class="form-group">
                                                 <select name="" class="form-select select2">
                                                     <option value="">
-                                                        Job Category
+                                                        {{$home_page_data->job_category}}
                                                     </option>
                                                     <option value="">
                                                         Accounting
@@ -80,7 +78,7 @@
                                         <div class="col-lg-3">
                                             <button type="submit" class="btn btn-primary">
                                                 <i class="fas fa-search"></i>
-                                                Search
+                                                {{$home_page_data->search}}
                                             </button>
                                         </div>
                                     </div>
