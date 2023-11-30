@@ -25,21 +25,22 @@
                 </ul>
             </li>
 
-            <li class=""><a class="nav-link" href="setting.html" data-bs-toggle="tooltip" 
+            <li class="nav-item dropdown active">
+                <a href="#" class="nav-link has-dropdown"><i class="fas fa-hand-point-right"></i>
+                    <span>Vagas</span></a>
+                <ul class="dropdown-menu">
+                    <li class="active"><a class="nav-link" href="{{ route('admin_job_category') }}"><i class="fas fa-angle-right"></i> Categorias</a>
+                    </li>
+                    <li class=""><a class="nav-link" href="{{ route('admin_job_location')}}"><i class="fas fa-angle-right"></i> Localizações</a>
+                    </li>
+                </ul>
+            </li>
+
+            {{-- <li class=""><a class="nav-link" href="" data-bs-toggle="tooltip" 
                 data-bs-placement="rigth" data-bs-title="Dashboard"><i class="fas fa-hand-point-right"></i>
-                    <span>Setting</span></a></li>
+                    <span>Categorias de Vagas</span></a></li> --}}
 
-            <li class=""><a class="nav-link" href="form.html" data-bs-toggle="tooltip" 
-                data-bs-placement="rigth" data-bs-title="Form"><i class="fas fa-hand-point-right"></i>
-                    <span>Formulários</span></a></li>
-
-            <li class=""><a class="nav-link" href="table.html" data-bs-toggle="tooltip" 
-                data-bs-placement="rigth" data-bs-title="Table"><i class="fas fa-hand-point-right"></i>
-                    <span>Tabelas</span></a></li>
-
-            <li class=""><a class="nav-link" href="invoice.html" data-bs-toggle="tooltip" 
-                data-bs-placement="rigth" data-bs-title="Invoice"><i class="fas fa-hand-point-right"></i>
-                    <span>Invoice</span></a></li>
+           
 
         </ul>
     </aside>
