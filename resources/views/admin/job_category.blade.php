@@ -23,6 +23,7 @@
                                         <th>SL</th>
                                         <th>Título</th>
                                         <th>Ícone</th>
+                                        <th>Ícone Preview</th>
                                         <th>Ações</th>
                                     </tr>
                                 </thead>
@@ -32,11 +33,13 @@
                                             <td>{{ $loop->iteration }}</td>
                                             <td>{{ $item->name }}</td>
                                             <td>{{ $item->icon }}</td>
+                                            <td>
+                                                <i class="{{ $item->icon}}"></i>
+                                            </td>
                                             <td class="pt_10 pb_10">
-                                                <a href="" class="btn btn-primary btn-sm"
-                                                    onClick="return confirm('Are you sure?');">Editar</a>
-                                                <a href="" class="btn btn-danger btn-sm"
-                                                    onClick="return confirm('Are you sure?');">Remover</a>
+                                                <a href="{{ route('admin_job_category_edit', $item->id)  }}" class="btn btn-primary btn-sm">Editar</a>
+                                                <a href="{{ route('admin_job_category_delete', $item->id)  }}" class="btn btn-danger btn-sm"
+                                                    onClick="return confirm('Tem certeza?');">Remover</a>
                                             </td>
                                         </tr>
                                     @endforeach
