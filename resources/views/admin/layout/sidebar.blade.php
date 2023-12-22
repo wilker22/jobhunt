@@ -9,8 +9,8 @@
 
         <ul class="sidebar-menu">
 
-            <li class="{{ Request::is('admin/home') ? 'active' : '' }}"><a class="nav-link" href="{{route('admin_home')}}" 
-                data-bs-toggle="tooltip" 
+            <li class="{{ Request::is('admin/home') ? 'active' : '' }}"><a class="nav-link" href="{{route('admin_home')}}"
+                data-bs-toggle="tooltip"
                 data-bs-placement="rigth" data-bs-title="Dashboard"><i class="fas fa-hand-point-right"></i>
                     <span>Dashboard</span></a></li>
 
@@ -36,11 +36,11 @@
                 </ul>
             </li>
 
-            {{-- <li class=""><a class="nav-link" href="" data-bs-toggle="tooltip" 
-                data-bs-placement="rigth" data-bs-title="Dashboard"><i class="fas fa-hand-point-right"></i>
-                    <span>Categorias de Vagas</span></a></li> --}}
+            <li class="{{ Request::is('admin/why_choose/*') ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin_why_choose_item') }}" data-bs-toggle="tooltip"
+                data-bs-placement="rigth" data-bs-title="Why Choose items"><i class="fas fa-hand-point-right"></i>
+                    <span>Como Escolher as Vagas (items)</span></a></li>
 
-           
+
 
         </ul>
     </aside>
