@@ -41,7 +41,7 @@ class AdminWhyChooseController extends Controller
 
     public function edit($id)
     {
-        $why_choose_item_single = JobCategory::where('id', $id)->first();
+        $why_choose_item_single = WhyChooseItem::where('id', $id)->first();
         return view('admin.why_choose_item_edit', compact('why_choose_item_single'));
     }
 
@@ -50,12 +50,15 @@ class AdminWhyChooseController extends Controller
         $obj = WhyChooseItem::where('id', $id)->first();
 
         $request->validate([
-            'name' => 'required',
-            'icon' => 'required'
+                 'icon' => 'required',
+                 'heading' => 'required',
+                 'text' => 'required'
         ]);
 
-        $obj->name = $request->name;
+
         $obj->icon = $request->icon;
+        $obj->heading = $request->heading;
+        $obj->text = $request->text;
         $obj->update();
         return redirect()->route('admin_why_choose_item')->with('success', 'WhyChoose atualizada com sucesso!');
 

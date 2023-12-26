@@ -1,6 +1,6 @@
 @extends('admin.layout.app')
 
-@section('heading', 'Vagas - Cadastrar Categoria')
+@section('heading', 'Vagas - Editar Categoria')
 
 @section('main_content')
 
@@ -28,12 +28,12 @@
                                         <i class="{{ $job_category_single->icon }}"></i>
                                     </div>
                                 </div>
-                                
+
                                 <div class="form-group mb-3">
                                     <label>Ícone *</label>
                                     <input type="text" class="form-control" name="icon" value="{{ $job_category_single->icon }}" >
                                 </div>
-                                
+
                                 <div class="form-group">
                                     <button type="submit" class="btn btn-primary">Atualizar</button>
                                 </div>
