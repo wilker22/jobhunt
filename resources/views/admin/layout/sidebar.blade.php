@@ -36,16 +36,10 @@
                 </ul>
             </li>
 
-<<<<<<< HEAD
             <li class="{{ Request::is('admin/why_choose/*') ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin_why_choose_item') }}" data-bs-toggle="tooltip"
                 data-bs-placement="rigth" data-bs-title="Why Choose items"><i class="fas fa-hand-point-right"></i>
-                    <span>Como Escolher as Vagas (items)</span></a></li>
+                    <span>Why Choose Items</span></a></li>
 
-=======
-            {{-- <li class=""><a class="nav-link" href="" data-bs-toggle="tooltip" 
-                data-bs-placement="rigth" data-bs-title="Dashboard"><i class="fas fa-hand-point-right"></i>
-                    <span>Categorias</span></a></li> --}}
->>>>>>> 50595eadc5022511bfda42898089de2f7a363524
 
 
         </ul>

@@ -37,8 +37,8 @@
                                                 <i class="{{ $item->icon }}"></i>
                                             </td>
 
-                                            <td>{{ $item->heading}}"></td>
-                                            <td>{{ $item->text}}"></td>
+                                            <td>{{ $item->heading}}</td>
+                                            <td>{{ $item->text}}</td>
                                             <td class="pt_10 pb_10">
                                                 <a href="{{ route('admin_why_choose_item_edit', $item->id)  }}" class="btn btn-primary btn-sm">Editar</a>
                                                 <a href="{{ route('admin_why_choose_item_delete', $item->id)  }}" class="btn btn-danger btn-sm"
