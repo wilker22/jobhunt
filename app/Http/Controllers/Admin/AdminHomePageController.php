@@ -27,6 +27,8 @@ class AdminHomePageController extends Controller
             'job_category_status' => 'required',
             'why_choose_heading' => 'required',
             'why_choose_status' => 'required',
+            'featured_jobs_heading' => 'required',
+            'featured_jobs_status' => 'required',
 
         ]);
 
@@ -56,7 +58,7 @@ class AdminHomePageController extends Controller
             $final_name1 = 'why_choose_home_background'.'.'.$ext1;
 
             $request->file('why_choose_background')->move(public_path('uploads/'),$final_name1);
-                            
+
             $home_page_data->why_choose_background = $final_name1;
         }
 
@@ -74,6 +76,11 @@ class AdminHomePageController extends Controller
         $home_page_data->why_choose_heading = $request->why_choose_heading;
         $home_page_data->why_choose_subheading = $request->why_choose_subheading;
         $home_page_data->why_choose_status = $request->why_choose_status;
+
+        $home_page_data->featured_jobs_heading = $request->featured_jobs_heading;
+        $home_page_data->featured_jobs_subheading = $request->featured_jobs_subheading;
+        $home_page_data->featured_jobs_status = $request->featured_jobs_status;
+
         $home_page_data->update();
 
         return redirect()->back()->with('success', 'Dados atualizados com sucesso!');

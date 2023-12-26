@@ -1,6 +1,6 @@
 @extends('admin.layout.app')
 
-@section('heading', 'Home Page Content')
+@section('heading', 'Home Page - Conteúdo')
 
 @section('main_content')
 
@@ -18,9 +18,11 @@
 
                                     <button class="nav-link active" id="v-pills-1-tab" data-bs-toggle="pill" data-bs-target="#v-pills-1" type="button" role="tab" aria-controls="v-pills-1" + aria-selected="true">Search</button>
 
-                                    <button class="nav-link" id="v-pills-2-tab" data-bs-toggle="pill" data-bs-target="#v-pills-2" type="button" role="tab" aria-controls="v-pills-2" aria-selected="false">Job Category</button>
+                                    <button class="nav-link" id="v-pills-2-tab" data-bs-toggle="pill" data-bs-target="#v-pills-2" type="button" role="tab" aria-controls="v-pills-2" aria-selected="false">Job Categories</button>
 
-                                    <button class="nav-link" id="v-pills-3-tab" data-bs-toggle="pill" data-bs-target="#v-pills-3" type="button" role="tab" aria-controls="v-pills-3" aria-selected="false">Why choose Us</button>
+                                    <button class="nav-link" id="v-pills-3-tab" data-bs-toggle="pill" data-bs-target="#v-pills-3" type="button" role="tab" aria-controls="v-pills-3" aria-selected="false">Why Choose Us</button>
+
+                                    <button class="nav-link" id="v-pills-4-tab" data-bs-toggle="pill" data-bs-target="#v-pills-4" type="button" role="tab" aria-controls="v-pills-4" aria-selected="false">Featured Jobs</button>
                                 </div>
                             </div>
 
@@ -104,11 +106,11 @@
 
                                             <div class="col-md-9">
                                                 <div class="mb-4">
-                                                    <label class="form-label">Título - Categorias *</label>
+                                                    <label class="form-label">Categories - heading *</label>
                                                     <input type="text" class="form-control" name="job_category_heading" value="{{$page_home_data->job_category_heading}}">
                                                 </div>
                                                 <div class="mb-4">
-                                                    <label class="form-label">Sub Título - Categorias *</label>
+                                                    <label class="form-label">Categories - SubHeading *</label>
                                                     <input type="text" class="form-control" name="job_category_subheading" value="{{$page_home_data->job_category_subheading}}">
                                                 </div>
                                                 <div class="mb-4">
@@ -131,11 +133,11 @@
 
                                             <div class="col-md-9">
                                                 <div class="mb-4">
-                                                    <label class="form-label">Título - Why choose *</label>
+                                                    <label class="form-label">Heading - Why choose *</label>
                                                     <input type="text" class="form-control" name="why_choose_heading" value="{{$page_home_data->why_choose_heading}}">
                                                 </div>
                                                 <div class="mb-4">
-                                                    <label class="form-label">Sub Título - Why Choose *</label>
+                                                    <label class="form-label">Subheading - Why Choose *</label>
                                                     <input type="text" class="form-control" name="why_choose_subheading" value="{{$page_home_data->why_choose_subheading}}">
                                                 </div>
                                                 <div class="mb-4">
@@ -162,6 +164,32 @@
                                         </div>
 
                                         <!--why choose Us section end -->
+                                    </div>
+
+                                    <div class="tab-pane fade" id="v-pills-4" role="tabpanel" aria-labelledby="v-pills-4-tab" tabindex="0">
+                                        <!--featured jobs section start -->
+                                        <div class="row">
+
+                                            <div class="col-md-9">
+                                                <div class="mb-4">
+                                                    <label class="form-label">Heading - Featured Jobs *</label>
+                                                    <input type="text" class="form-control" name="featured_jobs_heading" value="{{$page_home_data->featured_jobs_heading}}">
+                                                </div>
+                                                <div class="mb-4">
+                                                    <label class="form-label">SubHeading - Featured Jobs *</label>
+                                                    <input type="text" class="form-control" name="featured_jobs_subheading" value="{{$page_home_data->featured_jobs_subheading}}">
+                                                </div>
+                                                <div class="mb-4">
+                                                    <label class="form-label">Status *</label>
+                                                    <select name="featured_jobs_status" class="form-control select2" >
+                                                        <option value="show" @if($page_home_data->featured_jobs_status == 'show') selected @endif>Mostrar</option>
+                                                        <option value="hide" @if($page_home_data->featured_jobs_status == 'hide') selected @endif>Esconder</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!--featured jobs section end -->
                                     </div>
 
                                 </div>
