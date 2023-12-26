@@ -25,6 +25,10 @@ return new class extends Migration
             $table->string('job_category_heading');
             $table->string('job_category_subheading')->nullable();
             $table->string('job_category_status');
+            $table->string('why_choose_heading');
+            $table->string('why_choose_subheading')->nullable();
+            $table->string('why_choose_background');
+            $table->string('why_choose_status');
             $table->timestamps();
         });
     }

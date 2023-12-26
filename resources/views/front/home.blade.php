@@ -121,44 +121,45 @@
         </div>
     @endif
 
-    <div class="why-choose" style="background-image: url(uploads/banner3.jpg)">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="heading">
-                        <h2>Why Choose Us</h2>
-                        <p>
-                            Our Methods to help you build your career in
-                            future
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                @foreach ($why_choose_items as $item)
-                    <div class="col-md-4">
-                        <div class="inner">
-                            <div class="icon">
-                                <i class="{{ $item->icon }}"></i>
-                            </div>
-                            <div class="text">
-                                <h2>{{ $item->heading }}</h2>
-                                <p>
-                                    {!! nl2br($item->text) !!}
-                                </p>
-                            </div>
+    @if ($home_page_data->why_choose_status == 'show')
+        <div class="why-choose" style="background-image: url(uploads/banner3.jpg)">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="heading">
+                            <h2>{{ $home_page_data->why_choose_heading }}</h2>
+                            <p>
+                                {{ $home_page_data->why_choose_subheading }}
+                            </p>
                         </div>
                     </div>
-                @endforeach
+                </div>
+                <div class="row">
+                    @foreach ($why_choose_items as $item)
+                        <div class="col-md-4">
+                            <div class="inner">
+                                <div class="icon">
+                                    <i class="{{ $item->icon }}"></i>
+                                </div>
+                                <div class="text">
+                                    <h2>{{ $item->heading }}</h2>
+                                    <p>
+                                        {!! nl2br($item->text) !!}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
 
-            </div>
+                </div>
 
-            <div class="row">
+                <div class="row">
 
 
+                </div>
             </div>
         </div>
-    </div>
+    @endif
 
     <div class="job">
         <div class="container">

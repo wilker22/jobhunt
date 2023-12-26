@@ -18,7 +18,9 @@
 
                                     <button class="nav-link active" id="v-pills-1-tab" data-bs-toggle="pill" data-bs-target="#v-pills-1" type="button" role="tab" aria-controls="v-pills-1" + aria-selected="true">Search</button>
 
-                                    <button class="nav-link" id="v-pills-2-tab" data-bs-toggle="pill" data-bs-target="#v-pills-2" type="button" role="tab" aria-controls="v-pills-2" aria-selected="false">Category</button>
+                                    <button class="nav-link" id="v-pills-2-tab" data-bs-toggle="pill" data-bs-target="#v-pills-2" type="button" role="tab" aria-controls="v-pills-2" aria-selected="false">Job Category</button>
+
+                                    <button class="nav-link" id="v-pills-3-tab" data-bs-toggle="pill" data-bs-target="#v-pills-3" type="button" role="tab" aria-controls="v-pills-3" aria-selected="false">Why choose Us</button>
                                 </div>
                             </div>
 
@@ -120,6 +122,46 @@
                                         </div>
 
                                         <!--Category section end -->
+                                    </div>
+
+
+                                    <div class="tab-pane fade" id="v-pills-3" role="tabpanel" aria-labelledby="v-pills-3-tab" tabindex="0">
+                                        <!--why choose Us section start -->
+                                        <div class="row">
+
+                                            <div class="col-md-9">
+                                                <div class="mb-4">
+                                                    <label class="form-label">Título - Why choose *</label>
+                                                    <input type="text" class="form-control" name="why_choose_heading" value="{{$page_home_data->why_choose_heading}}">
+                                                </div>
+                                                <div class="mb-4">
+                                                    <label class="form-label">Sub Título - Why Choose *</label>
+                                                    <input type="text" class="form-control" name="why_choose_subheading" value="{{$page_home_data->why_choose_subheading}}">
+                                                </div>
+                                                <div class="mb-4">
+                                                    <label class="form-label">Existing Background - Why choose*</label>
+                                                    <div>
+                                                        <img src="{{ asset('uploads/'.$page_home_data->why_choose_background) }}" alt="" class="w_200">
+                                                    </div>
+                                                </div>
+                                                <div class="mb-4">
+                                                    <label class="form-label">Change Background *</label>
+                                                    <div>
+                                                        <input type="file" class="form-control mt_10" name="why_choose_background">
+                                                    </div>
+
+                                                </div>
+                                                <div class="mb-4">
+                                                    <label class="form-label">Status *</label>
+                                                    <select name="why_choose_status" class="form-control select2" >
+                                                        <option value="show" @if($page_home_data->why_choose_status == 'show') selected @endif>Mostrar</option>
+                                                        <option value="hide" @if($page_home_data->why_choose_status == 'hide') selected @endif>Esconder</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!--why choose Us section end -->
                                     </div>
 
                                 </div>
