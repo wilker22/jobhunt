@@ -14,7 +14,7 @@
 
     @include('front.layout.scripts')
 
-    
+
 
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap"
         rel="stylesheet" />
@@ -164,6 +164,7 @@
         <i class="fas fa-angle-up"></i>
     </div>
 
+    @include('front.layout.scripts')
     @include('front.layout.scripts_botton')
 </body>
 
