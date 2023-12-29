@@ -29,6 +29,8 @@ class AdminHomePageController extends Controller
             'why_choose_status' => 'required',
             'featured_jobs_heading' => 'required',
             'featured_jobs_status' => 'required',
+            'testimonial_heading' => 'required',
+            'testimonial_status' => 'required',
 
         ]);
 
@@ -62,6 +64,21 @@ class AdminHomePageController extends Controller
             $home_page_data->why_choose_background = $final_name1;
         }
 
+        if($request->hasFile('testimonial_background')){
+            $request->validate([
+                'testimonial_background' => 'image|mimes:jpg,jpeg,png,gif'
+            ]);
+
+            unlink(public_path('uploads/'.$home_page_data->testimonial_background));
+
+            $ext1 = $request->file('testimonial_background')->extension();
+            $final_name1 = 'testimonial_home_background'.'.'.$ext1;
+
+            $request->file('testimonial_background')->move(public_path('uploads/'),$final_name1);
+
+            $home_page_data->testimonial_background = $final_name1;
+        }
+
         $home_page_data->heading = $request->heading;
         $home_page_data->text = $request->text;
         $home_page_data->job_title = $request->job_title;
@@ -80,6 +97,10 @@ class AdminHomePageController extends Controller
         $home_page_data->featured_jobs_heading = $request->featured_jobs_heading;
         $home_page_data->featured_jobs_subheading = $request->featured_jobs_subheading;
         $home_page_data->featured_jobs_status = $request->featured_jobs_status;
+
+        $home_page_data->testimonial_heading = $request->testimonial_heading;
+        $home_page_data->testimonial_subheading = $request->testimonial_subheading;
+        $home_page_data->testimonial_status = $request->testimonial_status;
 
         $home_page_data->update();
 

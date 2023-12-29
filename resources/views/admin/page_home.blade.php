@@ -23,6 +23,8 @@
                                     <button class="nav-link" id="v-pills-3-tab" data-bs-toggle="pill" data-bs-target="#v-pills-3" type="button" role="tab" aria-controls="v-pills-3" aria-selected="false">Why Choose Us</button>
 
                                     <button class="nav-link" id="v-pills-4-tab" data-bs-toggle="pill" data-bs-target="#v-pills-4" type="button" role="tab" aria-controls="v-pills-4" aria-selected="false">Featured Jobs</button>
+
+                                    <button class="nav-link" id="v-pills-5-tab" data-bs-toggle="pill" data-bs-target="#v-pills-5" type="button" role="tab" aria-controls="v-pills-5" aria-selected="false">Testimonials</button>
                                 </div>
                             </div>
 
@@ -190,6 +192,45 @@
                                         </div>
 
                                         <!--featured jobs section end -->
+                                    </div>
+
+                                    <div class="tab-pane fade" id="v-pills-5" role="tabpanel" aria-labelledby="v-pills-5-tab" tabindex="0">
+                                        <!--Testimonial section start -->
+                                        <div class="row">
+
+                                            <div class="col-md-9">
+                                                <div class="mb-4">
+                                                    <label class="form-label">Heading *</label>
+                                                    <input type="text" class="form-control" name="testimonial_heading" value="{{$page_home_data->testimonial_heading}}">
+                                                </div>
+                                                <div class="mb-4">
+                                                    <label class="form-label">Subheading  *</label>
+                                                    <input type="text" class="form-control" name="testimonial_subheading" value="{{$page_home_data->testimonial_subheading}}">
+                                                </div>
+                                                <div class="mb-4">
+                                                    <label class="form-label">Existing Background *</label>
+                                                    <div>
+                                                        <img src="{{ asset('uploads/'.$page_home_data->testimonial_background) }}" alt="" class="w_200">
+                                                    </div>
+                                                </div>
+                                                <div class="mb-4">
+                                                    <label class="form-label">Change Background *</label>
+                                                    <div>
+                                                        <input type="file" class="form-control mt_10" name="testimonial_background">
+                                                    </div>
+
+                                                </div>
+                                                <div class="mb-4">
+                                                    <label class="form-label">Status *</label>
+                                                    <select name="testimonial_status" class="form-control select2" >
+                                                        <option value="show" @if($page_home_data->testimonial_status == 'show') selected @endif>Mostrar</option>
+                                                        <option value="hide" @if($page_home_data->testimonial_status == 'hide') selected @endif>Esconder</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!--Testimonial section end -->
                                     </div>
 
                                 </div>
