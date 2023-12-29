@@ -11,16 +11,21 @@
     $('.icp_demo').iconpicker();
 
     $(document).ready(function() {
-        $('.snote').summernote();
+        //$('.snote').summernote();
     });
 
-    $('.datepicker').datepicker({ format: "yyyy/mm/dd" });
+    $('.datepicker').datepicker({ format: "dd/mm/yyyy" });
     $('.timepicker').timepicker({
         icons:
         {
             up: 'fa fa-angle-up',
             down: 'fa fa-angle-down'
         }
+    });
+
+    tinymce.init({
+        selector: ".editor",
+        height: "300",
     });
 
 })(jQuery);

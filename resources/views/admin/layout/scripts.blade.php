@@ -16,3 +16,4 @@
     <script src="{{ asset ('dist/js/iziToast.min.js') }}"></script>
     <script src="{{ asset ('dist/js/fontawesome-iconpicker.js') }}"></script>
     <script src="{{ asset ('dist/js/bootstrap4-toggle.min.js') }}"></script>
+    <script src="{{ asset ('dist-front/tinymce/tinymce.min.js') }}"></script>

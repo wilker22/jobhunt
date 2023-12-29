@@ -131,7 +131,7 @@
     });
 
     $(".datepicker").datepicker({
-        format: "yyyy-mm-dd",
+        format: "dd-mm-yyyy",
         todayHighlight: true
     });
 })(jQuery);

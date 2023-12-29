@@ -50,7 +50,13 @@
                 href="{{ route('admin_testimonial') }}" data-bs-toggle="tooltip" data-bs-placement="rigth"
                 data-bs-title="Testimonial"><i class="fas fa-hand-point-right"></i>
                 <span>Testimonials</span></a>
-        </li>
+             </li>
+
+             <li class="{{ Request::is('admin/post/*') ? 'active' : '' }}"><a class="nav-link"
+                href="{{ route('admin_post') }}" data-bs-toggle="tooltip" data-bs-placement="rigth"
+                data-bs-title="Post"><i class="fas fa-hand-point-right"></i>
+                <span>Posts</span></a>
+             </li>
 
 
 
