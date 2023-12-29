@@ -25,7 +25,7 @@ class AdminPostController extends Controller
     {
         $request->validate([
             'title' => 'required',
-            'slug' => '[required|alpha_dash|unique:posts]',
+            'slug' => 'required|alpha_dash|unique:posts',
             'short_description' => 'required',
             'description' => 'required',
             'photo' => 'required|image|mimes:jpg,jpeg,png,gif'
