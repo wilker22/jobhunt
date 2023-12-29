@@ -38,9 +38,9 @@
                                         <td>{{ $item->title }}</td>
 
                                         <td class="pt_10 pb_10">
-                                            <a href="{{ route('admin_testimonial_edit', $item->id) }}"
+                                            <a href="{{ route('admin_post_edit', $item->id) }}"
                                                 class="btn btn-primary btn-sm">Editar</a>
-                                            <a href="{{ route('admin_testimonial_delete', $item->id) }}"
+                                            <a href="{{ route('admin_post_delete', $item->id) }}"
                                                 class="btn btn-danger btn-sm"
                                                 onClick="return confirm('Tem certeza?');">Remover</a>
                                         </td>

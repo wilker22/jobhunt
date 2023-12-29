@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class AdminPostController extends Controller
 {
@@ -24,7 +25,7 @@ class AdminPostController extends Controller
     {
         $request->validate([
             'title' => 'required',
-            'slug' => 'required|alpha_dash|unique:posts',
+            'slug' => '[required|alpha_dash|unique:posts]',
             'short_description' => 'required',
             'description' => 'required',
             'photo' => 'required|image|mimes:jpg,jpeg,png,gif'
@@ -43,7 +44,7 @@ class AdminPostController extends Controller
         $obj->short_description = $request->short_description;
         $obj->description = $request->description;
         $obj->total_view = 0;
-       
+
 
         $obj->save();
 
@@ -53,19 +54,20 @@ class AdminPostController extends Controller
 
     public function edit($id)
     {
-        $testimonial_single = Testimonial::where('id', $id)->first();
-        return view('admin.testimonial_edit', compact('testimonial_single'));
+        $post_single = Post::where('id', $id)->first();
+        return view('admin.post_edit', compact('post_single'));
     }
 
 
     public function update(Request $request, $id)
     {
-        $obj = Testimonial::where('id', $id)->first();
+        $obj = Post::where('id', $id)->first();
 
         $request->validate([
-            'name' => 'required',
-            'designation' => 'required',
-            'comment' => 'required',
+            'title' => 'required',
+            'slug' => ['required','alpha_dash', Rule::unique('posts')->ignore($id)],
+            'short_description' => 'required',
+            'description' => 'required',
 
         ]);
 
@@ -75,27 +77,28 @@ class AdminPostController extends Controller
             ]);
         }
 
-        unlink(public_path('uploads/' . $obj->photo));
+        unlink(public_path('uploads/'.$obj->photo));
         $ext = $request->file('photo')->extension();
-        $final_name = 'testimonial_' . time() . '.' . $ext;
+        $final_name = 'post_' . time() . '.' . $ext;
         $request->file('photo')->move(public_path('uploads/'), $final_name);
 
         $obj->photo = $final_name;
-        $obj->name = $request->name;
-        $obj->designation = $request->designation;
-        $obj->comment = $request->comment;
+        $obj->title = $request->title;
+        $obj->slug = $request->slug;
+        $obj->short_description = $request->short_description;
+        $obj->description = $request->description;
 
         $obj->update();
 
-        return redirect()->route('admin_testimonial')->with('success', 'Testimonial ATUALIZADO com sucesso!');
+        return redirect()->route('admin_post')->with('success', 'Post ATUALIZADO com sucesso!');
     }
 
     public function delete($id)
     {
-        $testimonial_single = Testimonial::where('id', $id)->first();
-        unlink(public_path('uploads/' . $testimonial_single->photo));
-        $testimonial_single->delete();
+        $post_single = Post::where('id', $id)->first();
+        unlink(public_path('uploads/'.$post_single->photo));
+        Post::where('id', $id)->delete();
 
-        return redirect()->route('admin_testimonial')->with('success', 'Testimonial removida com sucesso!');
+        return redirect()->route('admin_post')->with('success', 'Post removido com sucesso!');
     }
 }
