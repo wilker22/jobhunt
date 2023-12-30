@@ -28,10 +28,10 @@
                         <li class="nav-item">
                             <a href="pricing.html" class="nav-link">Pricing</a>
                         </li>
-                        <li class="nav-item">
-                            <a href="faq.html" class="nav-link">FAQ</a>
+                        <li class="nav-item {{ Request::is('faq') ? 'active' : '' }}">
+                            <a href="{{ route('faq') }}" class="nav-link">FAQ</a>
                         </li>
-                        <li class="nav-item {{ Request::is('blog') ? 'active' : '' }}"">
+                        <li class="nav-item {{ Request::is('blog') ? 'active' : '' }}">
                             <a href="{{ route('blog') }}" class="nav-link">Blog</a>
                         </li>
                         <li class="nav-item">

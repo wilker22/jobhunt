@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminFaqController;
+use App\Http\Controllers\Admin\AdminFaqPageController;
 use App\Http\Controllers\Admin\AdminHomeController;
 use App\Http\Controllers\Admin\AdminHomePageController;
 use App\Http\Controllers\Admin\AdminJobCategoryController;
@@ -8,6 +10,7 @@ use App\Http\Controllers\Admin\AdminPostController;
 use App\Http\Controllers\Admin\AdminProfileController;
 use App\Http\Controllers\Admin\AdminTestimonialController;
 use App\Http\Controllers\Admin\AdminWhyChooseController;
+use App\Http\Controllers\Front\FaqController;
 use App\Http\Controllers\Front\HomeController;
 use App\Http\Controllers\Front\JobCategoryController;
 use App\Http\Controllers\Front\PostController;
@@ -19,6 +22,7 @@ Route::get('terms', [TermsController::class, 'index'])->name('terms');
 Route::get('blog', [PostController::class, 'index'])->name('blog');
 Route::get('post/{slug}', [PostController::class, 'detail'])->name('post');
 Route::get('job-categories', [JobCategoryController::class, 'categories'])->name('job_categories');
+Route::get('faq', [FaqController::class, 'index'])->name('faq');
 
 
 /**Admin */
@@ -33,10 +37,16 @@ Route::post('/admin/reset-password-submit', [AdminLoginController::class, 'reset
 
 Route::middleware(['admin:admin'])->group(function(){
     Route::get('/admin/home', [AdminHomeController::class, 'index'])->name('admin_home');
+
     Route::get('/admin/edit-profile', [AdminProfileController::class, 'index'])->name('admin_profile');
     Route::post('/admin/edit-profile-submit', [AdminProfileController::class, 'profile_submit'])->name('admin_profile_submit');
+
     Route::get('/admin/home-page', [AdminHomePageController::class, 'index'])->name('admin_home_page');
     Route::post('/admin/home-page/update', [AdminHomePageController::class, 'update'])->name('admin_home_page_update');
+
+    Route::get('/admin/faq-page', [AdminFaqPageController::class, 'index'])->name('admin_faq_page');
+    Route::post('/admin/faq-page/update', [AdminFaqPageController::class, 'update'])->name('admin_faq_page_update');
+
     Route::get('/admin/job-category/view', [AdminJobCategoryController::class, 'index'])->name('admin_job_category');
     Route::get('/admin/job-category/create', [AdminJobCategoryController::class, 'create'])->name('admin_job_category_create');
     Route::get('/admin/job-location', [AdminJobCategoryController::class, 'location'])->name('admin_job_location');
@@ -68,5 +78,13 @@ Route::middleware(['admin:admin'])->group(function(){
     Route::get('/admin/post/edit/{id}', [AdminPostController::class, 'edit'])->name('admin_post_edit');
     Route::post('/admin/post/update/{id}', [AdminPostController::class, 'update'])->name('admin_post_update');
     Route::get('/admin/post/delete/{id}', [AdminPostController::class, 'delete'])->name('admin_post_delete');
+
+    //FAQ routes
+    Route::get('/admin/faq/view', [AdminFaqController::class, 'index'])->name('admin_faq');
+    Route::get('/admin/faq/create', [AdminFaqController::class, 'create'])->name('admin_faq_create');
+    Route::post('/admin/faq/store', [AdminFaqController::class, 'store'])->name('admin_faq_store');
+    Route::get('/admin/faq/edit/{id}', [AdminFaqController::class, 'edit'])->name('admin_faq_edit');
+    Route::post('/admin/faq/update/{id}', [AdminFaqController::class, 'update'])->name('admin_faq_update');
+    Route::get('/admin/faq/delete/{id}', [AdminFaqController::class, 'delete'])->name('admin_faq_delete');
 });
 

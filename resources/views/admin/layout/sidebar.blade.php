@@ -9,20 +9,23 @@
 
         <ul class="sidebar-menu">
 
-            <li class="{{ Request::is('admin/home') ? 'active' : '' }}"><a class="nav-link"
+            <li class="{{ Request::is('admin/home') ?  'active' : '' }}"><a class="nav-link"
                     href="{{ route('admin_home') }}" data-bs-toggle="tooltip" data-bs-placement="rigth"
                     data-bs-title="Dashboard"><i class="fas fa-hand-point-right"></i>
                     <span>Dashboard</span></a></li>
 
-            <li class="nav-item dropdown {{ Request::is('admin/home-page') ? 'active' : '' }}">
+            <li class="nav-item dropdown {{ Request::is('admin/home-page') . '||' . Request::is('admin/faq-page')  ? 'active' : '' }}">
                 <a href="#" class="nav-link has-dropdown"><i class="fas fa-hand-point-right"></i>
                     <span>Configurações</span></a>
                 <ul class="dropdown-menu">
                     <li class="{{ Request::is('admin/home-page') ? 'active' : '' }}"><a class="nav-link"
                             href="{{ route('admin_home_page') }}"><i class="fas fa-angle-right"></i> Home</a>
                     </li>
-                    <li class=""><a class="nav-link" href="{{ route('terms') }}"><i
-                                class="fas fa-angle-right"></i> Terms</a>
+                    <li class="{{ Request::is('admin/faq-page') ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('admin_faq_page') }}">
+                            <i class="fas fa-angle-right"></i>
+                            FAQ
+                        </a>
                     </li>
                 </ul>
             </li>
@@ -56,6 +59,12 @@
                 href="{{ route('admin_post') }}" data-bs-toggle="tooltip" data-bs-placement="rigth"
                 data-bs-title="Post"><i class="fas fa-hand-point-right"></i>
                 <span>Posts</span></a>
+             </li>
+
+             <li class="{{ Request::is('admin/faq/*') ? 'active' : '' }}"><a class="nav-link"
+                href="{{ route('admin_faq') }}" data-bs-toggle="tooltip" data-bs-placement="rigth"
+                data-bs-title="Faq"><i class="fas fa-hand-point-right"></i>
+                <span>FAQ</span></a>
              </li>
 
 
