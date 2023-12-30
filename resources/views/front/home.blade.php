@@ -122,7 +122,8 @@
     @endif
 
     @if ($home_page_data->why_choose_status == 'show')
-        <div class="why-choose" style="background-image: url({{ asset('uploads/'.$home_page_data->why_choose_background) }})">
+        <div class="why-choose"
+            style="background-image: url({{ asset('uploads/' . $home_page_data->why_choose_background) }})">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
@@ -354,125 +355,84 @@
     @endif
 
     @if ($home_page_data->testimonial_status == 'show')
-    <div class="testimonial" style="background-image: url({{ asset('uploads/'.$home_page_data->testimonial_background) }})">
-        <div class="bg"></div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <h2 class="main-header">{{ $home_page_data->testimonial_heading }}</h2>
+        <div class="testimonial"
+            style="background-image: url({{ asset('uploads/' . $home_page_data->testimonial_background) }})">
+            <div class="bg"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2 class="main-header">{{ $home_page_data->testimonial_heading }}</h2>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    <div class="testimonial-carousel owl-carousel">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="testimonial-carousel owl-carousel">
 
-                        @foreach ($testimonials as $item)
-                            <div class="item">
-                                <div class="photo">
-                                    <img src="{{ asset('uploads/'.$item->photo) }}" alt="" class="w_20"/>
+                            @foreach ($testimonials as $item)
+                                <div class="item">
+                                    <div class="photo">
+                                        <img src="{{ asset('uploads/' . $item->photo) }}" alt=""
+                                            class="w_20" />
+                                    </div>
+                                    <div class="text">
+                                        <h4>{{ $item->name }}</h4>
+                                        <p>{{ $item->designation }}</p>
+                                    </div>
+                                    <div class="description">
+                                        <p>
+                                            {!! nl2br($item->comment) !!}
+                                        </p>
+                                    </div>
                                 </div>
-                                <div class="text">
-                                    <h4>{{ $item->name }}</h4>
-                                    <p>{{ $item->designation }}</p>
-                                </div>
-                                <div class="description">
-                                    <p>
-                                        {!! nl2br($item->comment)  !!}
-                                    </p>
-                                </div>
-                            </div>
-                        @endforeach
+                            @endforeach
 
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
     @endif
 
-    <div class="blog">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="heading">
-                        <h2>Latest News</h2>
-                        <p>
-                            Check our latest news from the following section
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <div class="item">
-                        <div class="photo">
-                            <img src="{{ asset('front-dist/uploads/banner1.jpg') }}" alt="" />
-                        </div>
-                        <div class="text">
-                            <h2>
-                                <a href="post.html">This is a sample blog post title</a>
-                            </h2>
-                            <div class="short-des">
-                                <p>
-                                    Lorem ipsum dolor sit amet, nibh saperet
-                                    te pri, at nam diceret disputationi. Quo
-                                    an consul impedit, usu possim evertitur
-                                    dissentiet ei.
-                                </p>
-                            </div>
-                            <div class="button">
-                                <a href="post.html" class="btn btn-primary">Read More</a>
-                            </div>
+    @if ($home_page_data->blog_status == 'show')
+        <div class="blog">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="heading">
+                            <h2>{{ $home_page_data->blog_heading }}</h2>
+                            <p>
+                                {{ $home_page_data->blog_subheading }}
+                            </p>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="item">
-                        <div class="photo">
-                            <img src="{{ asset('front-dist/uploads/banner2.jpg') }}" alt="" />
-                        </div>
-                        <div class="text">
-                            <h2>
-                                <a href="post.html">This is a sample blog post title</a>
-                            </h2>
-                            <div class="short-des">
-                                <p>
-                                    Nec in rebum primis causae. Affert
-                                    iisque ex pri, vis utinam vivendo
-                                    definitionem ad, nostrum omnes que per
-                                    et. Omnium antiopam.
-                                </p>
-                            </div>
-                            <div class="button">
-                                <a href="post.html" class="btn btn-primary">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="item">
-                        <div class="photo">
-                            <img src="{{ asset('front-dist/uploads/banner3.jpg') }}" alt="" />
-                        </div>
-                        <div class="text">
-                            <h2>
-                                <a href="post.html">This is a sample blog post title</a>
-                            </h2>
-                            <div class="short-des">
-                                <p>
-                                    Id pri placerat voluptatum, vero dicunt
-                                    dissentiunt eum et, adhuc iisque vis no.
-                                    Eu suavitate conten tiones definitionem
-                                    mel, ex vide.
-                                </p>
-                            </div>
-                            <div class="button">
-                                <a href="post.html" class="btn btn-primary">Read More</a>
+                <div class="row">
+                    @foreach ($posts as $item)
+                        <div class="col-lg-4 col-md-6">
+                            <div class="item">
+                                <div class="photo">
+                                    <img src="{{ asset('uploads/'.$item->photo) }}" alt="" />
+                                </div>
+                                <div class="text">
+                                    <h2>
+                                        <a href="{{ route('post', $item->slug) }}">{{ $item->title }}</a>
+                                    </h2>
+                                    <div class="short-des">
+                                        <p>
+                                            {!! nl2br($item->short_description) !!}
+                                        </p>
+                                    </div>
+                                    <div class="button">
+                                        <a href="{{ route('post', $item->slug) }}" class="btn btn-primary">Leia mais...</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    @endforeach
+
+
                 </div>
             </div>
         </div>
-    </div>
+    @endif
 @endsection

@@ -31,6 +31,8 @@ class AdminHomePageController extends Controller
             'featured_jobs_status' => 'required',
             'testimonial_heading' => 'required',
             'testimonial_status' => 'required',
+            'blog_heading' => 'required',
+            'blog_status' => 'required',
 
         ]);
 
@@ -101,6 +103,10 @@ class AdminHomePageController extends Controller
         $home_page_data->testimonial_heading = $request->testimonial_heading;
         $home_page_data->testimonial_subheading = $request->testimonial_subheading;
         $home_page_data->testimonial_status = $request->testimonial_status;
+
+        $home_page_data->blog_heading = $request->blog_heading;
+        $home_page_data->blog_subheading = $request->blog_subheading;
+        $home_page_data->blog_status = $request->blog_status;
 
         $home_page_data->update();
 

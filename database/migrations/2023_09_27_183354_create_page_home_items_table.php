@@ -35,6 +35,9 @@ return new class extends Migration
             $table->string('testimonial_heading');
             $table->string('testimonial_background');
             $table->string('testimonial_status');
+            $table->string('blog_heading');
+            $table->string('blog_subheading')->nullable();
+            $table->string('blog_status');
             $table->timestamps();
         });
     }
