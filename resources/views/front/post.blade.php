@@ -1,12 +1,19 @@
 @extends('front.layout.app')
 
+@section('seo_title')
+    {{ $post_single->title }}
+@endsection
+@section('seo_meta_description')
+    {{ $post_single->meta_description }}
+@endsection
+
 @section('main_content')
     <div class="page-top" style="background-image: url('{{ asset('uploads/banner.jpg') }}')">
         <div class="bg"></div>
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h2>{{ $post_single->title }}</h2>
+                    <h2>{{ $post_single->heading }}</h2>
                 </div>
             </div>
         </div>

@@ -27,6 +27,12 @@
                             FAQ
                         </a>
                     </li>
+                    <li class="{{ Request::is('admin/blog-page') ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('admin_blog_page') }}">
+                            <i class="fas fa-angle-right"></i>
+                            Blog
+                        </a>
+                    </li>
                 </ul>
             </li>
 

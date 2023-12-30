@@ -24,11 +24,12 @@ class AdminPostController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'title' => 'required',
+            'heading' => 'required',
             'slug' => 'required|alpha_dash|unique:posts',
             'short_description' => 'required',
             'description' => 'required',
-            'photo' => 'required|image|mimes:jpg,jpeg,png,gif'
+            'photo' => 'required|image|mimes:jpg,jpeg,png,gif',
+
         ]);
 
         $obj = new Post();
@@ -39,10 +40,12 @@ class AdminPostController extends Controller
         $request->file('photo')->move(public_path('uploads/'), $final_name);
 
         $obj->photo = $final_name;
-        $obj->title = $request->title;
+        $obj->heading = $request->heading;
         $obj->slug = $request->slug;
         $obj->short_description = $request->short_description;
         $obj->description = $request->description;
+        $obj->title = $request->title;
+        $obj->meta_description = $request->meta_description;
         $obj->total_view = 0;
 
 
@@ -64,7 +67,7 @@ class AdminPostController extends Controller
         $obj = Post::where('id', $id)->first();
 
         $request->validate([
-            'title' => 'required',
+            'heading' => 'required',
             'slug' => ['required','alpha_dash', Rule::unique('posts')->ignore($id)],
             'short_description' => 'required',
             'description' => 'required',
@@ -83,10 +86,12 @@ class AdminPostController extends Controller
         $request->file('photo')->move(public_path('uploads/'), $final_name);
 
         $obj->photo = $final_name;
-        $obj->title = $request->title;
+        $obj->heading = $request->heading;
         $obj->slug = $request->slug;
         $obj->short_description = $request->short_description;
         $obj->description = $request->description;
+        $obj->title = $request->title;
+        $obj->meta_description = $request->meta_description;
 
         $obj->update();
 

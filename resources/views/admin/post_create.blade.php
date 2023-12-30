@@ -23,8 +23,8 @@
                                 <input type="file" value="" name="photo" class="form-control" >
                             </div>
                             <div class="form-group mb-3">
-                                <label>Title *</label>
-                                <input type="text" class="form-control" name="title" >
+                                <label>Heading *</label>
+                                <input type="text" class="form-control" name="heading" >
                             </div>
                             <div class="form-group mb-3">
                                 <label>Slug *</label>
@@ -37,6 +37,15 @@
                             <div class="form-group mb-3">
                                 <label>Description *</label>
                                 <textarea name="description" class="form-control editor" cols="30" rows="10"></textarea>
+                            </div>
+                            <h5>SEO Section</h5>
+                            <div class="form-group mb-3">
+                                <label>Title *</label>
+                                <input type="text" class="form-control" name="title" >
+                            </div>
+                            <div class="form-group mb-3">
+                                <label>Meta Description *</label>
+                                <input type="text" class="form-control" name="meta_description" >
                             </div>
                             <div class="form-group">
                                 <button type="submit" class="btn btn-primary">Cadastrar</button>

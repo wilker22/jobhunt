@@ -29,8 +29,8 @@
                                 <input type="file" value="" name="photo" class="form-control" >
                             </div>
                             <div class="form-group mb-3">
-                                <label>Title *</label>
-                                <input type="text" class="form-control" name="title" value="{{ $post_single->title }}">
+                                <label>Heading *</label>
+                                <input type="text" class="form-control" name="heading" value="{{ $post_single->heading }}">
                             </div>
                             <div class="form-group mb-3">
                                 <label>Slug *</label>
@@ -47,6 +47,15 @@
                                 <textarea name="description" class="form-control editor" cols="30" rows="10">
                                     {{ $post_single->description }}
                                 </textarea>
+                            </div>
+                            <h5>SEO Section</h5>
+                            <div class="form-group mb-3">
+                                <label>Title *</label>
+                                <input type="text" class="form-control" name="title" value="{{ $post_single->title }}">
+                            </div>
+                            <div class="form-group mb-3">
+                                <label>Meta Description *</label>
+                                <input type="text" class="form-control" name="meta_description" value="{{ $post_single->meta_description }}">
                             </div>
 
                             <div class="form-group">

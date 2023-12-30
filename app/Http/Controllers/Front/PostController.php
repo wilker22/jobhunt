@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
+use App\Models\PageBlogItem;
 use App\Models\Post;
 use Illuminate\Http\Request;
 
@@ -11,7 +12,8 @@ class PostController extends Controller
     public function index()
     {
         $posts = Post::orderBy('id', 'desc')->paginate(6);
-        return view('front.blog', compact('posts'));
+        $blog_page_item = PageBlogItem::where('id',1)->first();
+        return view('front.blog', compact('posts', 'blog_page_item'));
     }
 
     public function detail($slug)
