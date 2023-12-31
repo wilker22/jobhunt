@@ -14,7 +14,10 @@
                     data-bs-title="Dashboard"><i class="fas fa-hand-point-right"></i>
                     <span>Dashboard</span></a></li>
 
-            <li class="nav-item dropdown {{ Request::is('admin/home-page') . '||' . Request::is('admin/faq-page') .'||' . Request::is('admin/term-page') ? 'active' : '' }}">
+            <li class="nav-item dropdown {{ Request::is('admin/home-page') . '||' .
+                    Request::is('admin/faq-page') .'||' .
+                    Request::is('admin/term-page') .'||'.
+                    Request::is('admin/privacy-page') ? 'active' : '' }}">
                 <a href="#" class="nav-link has-dropdown"><i class="fas fa-hand-point-right"></i>
                     <span>Configurações</span></a>
                 <ul class="dropdown-menu">
@@ -37,6 +40,12 @@
                         <a class="nav-link" href="{{ route('admin_term_page') }}">
                             <i class="fas fa-angle-right"></i>
                             Terms
+                        </a>
+                    </li>
+                    <li class="{{ Request::is('admin/privacy-page') ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('admin_privacy_page') }}">
+                            <i class="fas fa-angle-right"></i>
+                            Política de Privacidade
                         </a>
                     </li>
                 </ul>

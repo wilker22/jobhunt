@@ -26,8 +26,8 @@
             <div class="row">
                 <div class="col-md-6 left-side">
                     <ul>
-                        <li class="phone-text">111-222-3333</li>
-                        <li class="email-text">contact@arefindev.com</li>
+                        <li class="phone-text">+55(87)98827-3964</li>
+                        <li class="email-text">contact@wtech.com</li>
                     </ul>
                 </div>
                 <div class="col-md-6 right-side">
@@ -151,7 +151,7 @@
                         <ul>
                             <li><a href="{{route('terms')}}">Termos de Uso</a></li>
                             <li>
-                                <a href="privacy.html">Privacy Policy</a>
+                                <a href="{{route('privacy')}}">Política de Privacidade</a>
                             </li>
                         </ul>
                     </div>
