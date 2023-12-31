@@ -17,6 +17,7 @@
             <li class="nav-item dropdown {{ Request::is('admin/home-page') . '||' .
                     Request::is('admin/faq-page') .'||' .
                     Request::is('admin/term-page') .'||'.
+                    Request::is('admin/contact-page') . '||' .
                     Request::is('admin/privacy-page') ? 'active' : '' }}">
                 <a href="#" class="nav-link has-dropdown"><i class="fas fa-hand-point-right"></i>
                     <span>Configurações</span></a>
@@ -46,6 +47,12 @@
                         <a class="nav-link" href="{{ route('admin_privacy_page') }}">
                             <i class="fas fa-angle-right"></i>
                             Política de Privacidade
+                        </a>
+                    </li>
+                    <li class="{{ Request::is('admin/contato-page') ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('admin_contact_page') }}">
+                            <i class="fas fa-angle-right"></i>
+                            Contato
                         </a>
                     </li>
                 </ul>

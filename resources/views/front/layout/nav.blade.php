@@ -20,22 +20,22 @@
                         </li>
                         <li class="nav-item ">
                             <a href="jobs.html" class="nav-link">
-                                Find Jobs</a>
+                                Encontre Vagas</a>
                         </li>
                         <li class="nav-item">
-                            <a href="companies.html" class="nav-link">Companies</a>
+                            <a href="companies.html" class="nav-link">Empresas</a>
                         </li>
                         <li class="nav-item">
-                            <a href="pricing.html" class="nav-link">Pricing</a>
+                            <a href="pricing.html" class="nav-link">Investimento</a>
                         </li>
                         <li class="nav-item {{ Request::is('faq') ? 'active' : '' }}">
                             <a href="{{ route('faq') }}" class="nav-link">FAQ</a>
                         </li>
-                        <li class="nav-item {{ Request::is('blog') .'||'. Request::is('posst/*') ? 'active' : '' }}">
+                        <li class="nav-item {{ Request::is('blog') .'||'. Request::is('post/*') ? 'active' : '' }}">
                             <a href="{{ route('blog') }}" class="nav-link">Blog</a>
                         </li>
-                        <li class="nav-item">
-                            <a href="contact.html" class="nav-link">Contact</a>
+                        <li class="nav-item {{ Request::is('contact') ? 'active' : '' }}">
+                            <a href="{{ route('contact') }}" class="nav-link">Contato</a>
                         </li>
                     </ul>
                 </div>

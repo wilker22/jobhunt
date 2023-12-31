@@ -8,7 +8,7 @@
     <meta name="description" content="@yield('seo_meta_description')" />
     <title>@yield('seo_title')</title>
 
-    <link rel="icon" type="{{asset('dist-front/image/png')}}" href="{{ asset('uploads/favicon.png') }}" />
+    <link rel="icon" type="{{ asset('dist-front/image/png') }}" href="{{ asset('uploads/favicon.png') }}" />
 
     @include('front.layout.style')
 
@@ -16,8 +16,7 @@
 
 
 
-    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap"
-        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
 </head>
 
 <body>
@@ -149,9 +148,9 @@
                 <div class="col-lg-6 col-md-6">
                     <div class="right">
                         <ul>
-                            <li><a href="{{route('terms')}}">Termos de Uso</a></li>
+                            <li><a href="{{ route('terms') }}">Termos de Uso</a></li>
                             <li>
-                                <a href="{{route('privacy')}}">Política de Privacidade</a>
+                                <a href="{{ route('privacy') }}">Política de Privacidade</a>
                             </li>
                         </ul>
                     </div>
@@ -166,6 +165,38 @@
 
     @include('front.layout.scripts')
     @include('front.layout.scripts_botton')
+
+    @if ($errors->any())
+        @foreach ($errors->all() as $error)
+            <script>
+                iziToast.error({
+                    title: '',
+                    position: 'topRight',
+                    message: '{{ $error }}',
+                });
+            </script>
+        @endforeach
+    @endif
+
+    @if (session()->get('error'))
+        <script>
+            iziToast.error({
+                title: '',
+                position: 'topRight',
+                message: '{{ session()->get('error') }}',
+            });
+        </script>
+    @endif
+
+    @if (session()->get('success'))
+        <script>
+            iziToast.success({
+                title: '',
+                position: 'topRight',
+                message: '{{ session()->get('success') }}',
+            });
+        </script>
+    @endif
 </body>
 
 </html>
