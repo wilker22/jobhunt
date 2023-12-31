@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\AdminJobCategoryController;
 use App\Http\Controllers\Admin\AdminLoginController;
 use App\Http\Controllers\Admin\AdminPostController;
 use App\Http\Controllers\Admin\AdminProfileController;
+use App\Http\Controllers\Admin\AdminTermPageController;
 use App\Http\Controllers\Admin\AdminTestimonialController;
 use App\Http\Controllers\Admin\AdminWhyChooseController;
 use App\Http\Controllers\Front\FaqController;
@@ -19,7 +20,7 @@ use App\Http\Controllers\Front\TermsController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('terms', [TermsController::class, 'index'])->name('terms');
+Route::get('terms-of-use', [TermsController::class, 'index'])->name('terms');
 Route::get('blog', [PostController::class, 'index'])->name('blog');
 Route::get('post/{slug}', [PostController::class, 'detail'])->name('post');
 Route::get('job-categories', [JobCategoryController::class, 'categories'])->name('job_categories');
@@ -50,6 +51,9 @@ Route::middleware(['admin:admin'])->group(function(){
 
     Route::get('/admin/blog-page', [AdminBlogPageController::class, 'index'])->name('admin_blog_page');
     Route::post('/admin/blog-page/update', [AdminBlogPageController::class, 'update'])->name('admin_blog_page_update');
+
+    Route::get('/admin/term-page', [AdminTermPageController::class, 'index'])->name('admin_term_page');
+    Route::post('/admin/term-page/update', [AdminTermPageController::class, 'update'])->name('admin_term_page_update');
 
     Route::get('/admin/job-category/view', [AdminJobCategoryController::class, 'index'])->name('admin_job_category');
     Route::get('/admin/job-category/create', [AdminJobCategoryController::class, 'create'])->name('admin_job_category_create');
