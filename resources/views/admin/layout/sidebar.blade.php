@@ -19,6 +19,7 @@
                     Request::is('admin/term-page') .'||'.
                     Request::is('admin/contact-page') . '||' .
                     Request::is('admin/job-category-page') . '||' .
+                    Request::is('admin/pricing-page') . '||' .
                     Request::is('admin/privacy-page') ? 'active' : '' }}">
                 <a href="#" class="nav-link has-dropdown"><i class="fas fa-hand-point-right"></i>
                     <span>Configurações</span></a>
@@ -61,6 +62,13 @@
                         <a class="nav-link" href="{{ route('admin_job_category_page') }}">
                             <i class="fas fa-angle-right"></i>
                             Categorias das Vagas
+                        </a>
+                    </li>
+
+                    <li class="{{ Request::is('admin/pricing-page') ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('admin_pricing_page') }}">
+                            <i class="fas fa-angle-right"></i>
+                            Planos
                         </a>
                     </li>
                 </ul>
@@ -108,6 +116,8 @@
                 data-bs-title="Package"><i class="fas fa-hand-point-right"></i>
                 <span>Pacotes</span></a>
              </li>
+
+             
 
 
 

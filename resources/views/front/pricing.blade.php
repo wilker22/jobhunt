@@ -1,5 +1,11 @@
 @extends('front.layout.app')
 
+@section('seo_title')
+    {{ $pricing_page_item->title }}
+@endsection
+@section('seo_meta_description')
+    {{ $pricing_page_item->meta_description }}
+@endsection
 
 @section('main_content')
 
@@ -8,7 +14,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h2>Pacotes</h2>
+                <h2>{{$pricing_page_item->heading}}</h2>
             </div>
         </div>
     </div>
