@@ -29,31 +29,77 @@
                         <hr />
                         <ul class="fa-ul">
                             <li>
+                                @php
+                                    if($item->total_allowed_jobs == -1){
+                                        $text = "Ilimitadas";
+                                        $icon_code = "fas fa-check";
+                                    }elseif($item->total_allowed_jobs == 0){
+                                        $text = "0";
+                                        $icon_code = "fas fa-times";
+                                    }else{
+                                        $text = $item->total_allowed_jobs ;
+                                        $icon_code = "fas fa-check";
+                                    }
+                                @endphp
                                 <span class="fa-li">
-                                    <i class="fas fa-check"></i>
+                                    <i class="{{$icon_code}}"></i>
                                 </span>
-                                @if($item->total_allowed_jobs == -1)
-                                    Ilimitado
-                                @else
-                                    {{ $item->total_allowed_jobs}}
-                                @endif
-                                
-                                Job Post Allowed
+                               {{$text}} Vagas de Emprego
                             </li>
                             <li>
-                                <span class="fa-li"><i class="fas fa-times"></i></span>
-                                @if($item->total_allowed_featured_jobs == -1)
-                                    Ilimitado
-                                @else
-                                    {{ $item->total_allowed_featured_jobs}}
-                                @endif
-                                 Featured Job
+                                @php
+                                    if($item->total_allowed_featured_jobs == -1){
+                                        $text = "Ilimitadas";
+                                        $icon_code = "fas fa-check";
+                                    }elseif($item->total_allowed_featured_jobs == 0){
+                                        $text = "0";
+                                        $icon_code = "fas fa-times";
+                                    }else{
+                                        $text = $item->total_allowed_featured_jobs ;
+                                        $icon_code = "fas fa-check";
+                                    }
+                                @endphp
+                                <span class="fa-li">
+                                    <i class="{{$icon_code}}"></i>
+                                </span>
+                               {{$text}} Vagas em Destaque
+                                                                   
                             </li>
                             <li>
-                                <span class="fa-li"><i class="fas fa-times"></i></span>{{$item->total_allowed_photos}} Company Photos
+                            @php
+                                    if($item->total_allowed_photos == -1){
+                                        $text = "Ilimitadas";
+                                        $icon_code = "fas fa-check";
+                                    }elseif($item->total_allowed_photos == 0){
+                                        $text = "0";
+                                        $icon_code = "fas fa-times";
+                                    }else{
+                                        $text = $item->total_allowed_photos ;
+                                        $icon_code = "fas fa-check";
+                                    }
+                                @endphp
+                                <span class="fa-li">
+                                    <i class="{{$icon_code}}"></i>
+                                </span>
+                               {{$text}} Photos
                             </li>
                             <li>
-                                <span class="fa-li"><i class="fas fa-times"></i></span>{{$item->total_allowed_videos}} Company Videos
+                            @php
+                                    if($item->total_allowed_videos == -1){
+                                        $text = "Ilimitadas";
+                                        $icon_code = "fas fa-check";
+                                    }elseif($item->total_allowed_videos == 0){
+                                        $text = "0";
+                                        $icon_code = "fas fa-times";
+                                    }else{
+                                        $text = $item->total_allowed_videos ;
+                                        $icon_code = "fas fa-check";
+                                    }
+                                @endphp
+                                <span class="fa-li">
+                                    <i class="{{$icon_code}}"></i>
+                                </span>
+                               {{$text}} Vídeos
                             </li>
                         </ul>
                         <div class="buy">
