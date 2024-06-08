@@ -26,7 +26,7 @@
                             <a href="companies.html" class="nav-link">Empresas</a>
                         </li>
                         <li class="nav-item">
-                            <a href="pricing.html" class="nav-link">Investimento</a>
+                            <a href="{{ route('pricing') }}" class="nav-link">Investimento</a>
                         </li>
                         <li class="nav-item {{ Request::is('faq') ? 'active' : '' }}">
                             <a href="{{ route('faq') }}" class="nav-link">FAQ</a>

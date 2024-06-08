@@ -17,4 +17,6 @@ class JobCategoryController extends Controller
         return view('front.job_categories', compact('job_categories', 'job_category_page_item'));
     }
 
+    
+
 }

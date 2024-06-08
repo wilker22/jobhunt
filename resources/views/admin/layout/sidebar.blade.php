@@ -103,6 +103,12 @@
                 <span>FAQ</span></a>
              </li>
 
+             <li class="{{ Request::is('admin/package/*') ? 'active' : '' }}"><a class="nav-link"
+                href="{{ route('admin_package') }}" data-bs-toggle="tooltip" data-bs-placement="rigth"
+                data-bs-title="Package"><i class="fas fa-hand-point-right"></i>
+                <span>Pacotes</span></a>
+             </li>
+
 
 
         </ul>
