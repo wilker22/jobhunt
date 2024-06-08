@@ -27,6 +27,8 @@
                                     <button class="nav-link" id="v-pills-5-tab" data-bs-toggle="pill" data-bs-target="#v-pills-5" type="button" role="tab" aria-controls="v-pills-5" aria-selected="false">Testimonials</button>
 
                                     <button class="nav-link" id="v-pills-6-tab" data-bs-toggle="pill" data-bs-target="#v-pills-6" type="button" role="tab" aria-controls="v-pills-6" aria-selected="false">Blog</button>
+
+                                    <button class="nav-link" id="v-pills-6-tab" data-bs-toggle="pill" data-bs-target="#v-pills-7" type="button" role="tab" aria-controls="v-pills-7" aria-selected="false">SEO Section</button>
                                 </div>
                             </div>
 
@@ -119,7 +121,7 @@
                                                 </div>
                                                 <div class="mb-4">
                                                     <label class="form-label">Status *</label>
-                                                    <select name="job_category_status" class="form-control select2" >
+                                                    <select name="job_category_status" class="form-control select2">
                                                         <option value="show" @if($page_home_data->job_category_status == 'show') selected @endif>Mostrar</option>
                                                         <option value="hide" @if($page_home_data->job_category_status == 'hide') selected @endif>Esconder</option>
                                                     </select>
@@ -159,7 +161,7 @@
                                                 </div>
                                                 <div class="mb-4">
                                                     <label class="form-label">Status *</label>
-                                                    <select name="why_choose_status" class="form-control select2" >
+                                                    <select name="why_choose_status" class="form-control select2">
                                                         <option value="show" @if($page_home_data->why_choose_status == 'show') selected @endif>Mostrar</option>
                                                         <option value="hide" @if($page_home_data->why_choose_status == 'hide') selected @endif>Esconder</option>
                                                     </select>
@@ -185,7 +187,7 @@
                                                 </div>
                                                 <div class="mb-4">
                                                     <label class="form-label">Status *</label>
-                                                    <select name="featured_jobs_status" class="form-control select2" >
+                                                    <select name="featured_jobs_status" class="form-control select2">
                                                         <option value="show" @if($page_home_data->featured_jobs_status == 'show') selected @endif>Mostrar</option>
                                                         <option value="hide" @if($page_home_data->featured_jobs_status == 'hide') selected @endif>Esconder</option>
                                                     </select>
@@ -206,7 +208,7 @@
                                                     <input type="text" class="form-control" name="testimonial_heading" value="{{$page_home_data->testimonial_heading}}">
                                                 </div>
                                                 <div class="mb-4">
-                                                    <label class="form-label">Subheading  *</label>
+                                                    <label class="form-label">Subheading *</label>
                                                     <input type="text" class="form-control" name="testimonial_subheading" value="{{$page_home_data->testimonial_subheading}}">
                                                 </div>
                                                 <div class="mb-4">
@@ -224,7 +226,7 @@
                                                 </div>
                                                 <div class="mb-4">
                                                     <label class="form-label">Status *</label>
-                                                    <select name="testimonial_status" class="form-control select2" >
+                                                    <select name="testimonial_status" class="form-control select2">
                                                         <option value="show" @if($page_home_data->testimonial_status == 'show') selected @endif>Mostrar</option>
                                                         <option value="hide" @if($page_home_data->testimonial_status == 'hide') selected @endif>Esconder</option>
                                                     </select>
@@ -245,14 +247,14 @@
                                                     <input type="text" class="form-control" name="blog_heading" value="{{$page_home_data->blog_heading}}">
                                                 </div>
                                                 <div class="mb-4">
-                                                    <label class="form-label">Subheading  *</label>
+                                                    <label class="form-label">Subheading *</label>
                                                     <input type="text" class="form-control" name="blog_subheading" value="{{$page_home_data->blog_subheading}}">
                                                 </div>
 
 
                                                 <div class="mb-4">
                                                     <label class="form-label">Status *</label>
-                                                    <select name="blog_status" class="form-control select2" >
+                                                    <select name="blog_status" class="form-control select2">
                                                         <option value="show" @if($page_home_data->blog_status == 'show') selected @endif>Mostrar</option>
                                                         <option value="hide" @if($page_home_data->blog_status == 'hide') selected @endif>Esconder</option>
                                                     </select>
@@ -261,6 +263,27 @@
                                         </div>
 
                                         <!--Blog section end -->
+                                    </div>
+
+
+                                    <div class="tab-pane fade" id="v-pills-7" role="tabpanel" aria-labelledby="v-pills-7-tab" tabindex="0">
+                                        <!--SEO section start -->
+                                        <div class="row">
+
+                                            <div class="col-md-9">
+                                                <div class="mb-4">
+                                                    <label class="form-label">Title *</label>
+                                                    <input type="text" class="form-control" name="title" value="{{$page_home_data->title}}">
+                                                </div>
+                                                <div class="mb-4">
+                                                    <label class="form-label">Meta Description *</label>
+                                                    <textarea name="meta_description" class="form-control h_100" cols="30" rows="10">{{$page_home_data->meta_description}}</textarea>
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+
+                                        <!--SEO section end -->
                                     </div>
 
                                 </div>
